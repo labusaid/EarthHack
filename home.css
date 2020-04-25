@@ -45,11 +45,21 @@ header {
     position: relative;
     top: 4vh;
 }
-.reasons {
-    width: 20%;
-}
 #adjustRow {
     position: relative;
-    left: 10%;
+    left: 12.5%;
     justify-content: center;
+}
+.reasonsLogo {
+    width: 20%;
+}
+.reason1 {
+    position: relative;
+    right: 7%;
+    top: 10%;
+}
+.reason2 {
+    position: relative;
+    right: 16%;
+    top: 10%;
 }
