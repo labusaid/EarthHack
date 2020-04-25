@@ -54,11 +54,13 @@ header {
     width: 20%;
 }
 .reason1 {
+    align-items: center;
     position: relative;
     right: 7%;
     top: 10%;
 }
 .reason2 {
+    align-items: center;
     position: relative;
     right: 16%;
     top: 10%;
