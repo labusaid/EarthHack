@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "earthxhack-2020",
+  "private_key_id": "0dd11a74799eeecf13ed7dc3d5f237daf0b672ed",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDsHs3KKgl7hImI\nJVue2kQaUOeQGcCNPdu8Ivgh6iGEZRPaZyPRd7dMUt4SXLaz0MJ3uX0CzJgFNGXR\nBOQNamYrHqk2gntnslcdcwn5S4oydk5fzOA1dJ6ZkB+vNhlgZeagXkjY8xTymQjf\n0B5AptUZ0j0SFr/LcFeziVDQ5kLYzNle66oR4IXeetOVtZS/A4mmopLiO/hXBD7M\ndzeOJq/H0FEZT8TCS87VAdBJfK1d9CFgn57dDh65sRnfOk7XSfoI6dImSs0sHP1u\nf7gkV+DkWS7FoYO76WnEnZOhlnLo6EjnGX7HMsVpnMXdzDgK4AhLVkiFgVN9kKQ/\ncroocw4JAgMBAAECggEAE3ZRCFE5dZ3Fr8wDfqcXPrONOKyUuVegT2Qy/2mi4Fyr\n+6AtfMAhQshgT1NmyFDEXLW0awkF3UT1wPomGYB8AiEdebWc2h3iLhZbu7mJHzJu\n8JjMoL9XbMkrQWgERLS1gyGuX7p+jyYDzB3lhnbx4PZaLA3lum0sv2rJt2RJXYDx\nehzgX3TB2WgNNkohwgSmS44aDNSb6bY0uQEwq5Og1io4FlWlYX7+xV8bG0GESN/K\nvGUxiVuF1q5p0KvwfXKsiiW1MLF02QShhLBv/cJVg1HMVZQX9GZulbI5wFdV2axU\ndA2xJTr5HiK5gQq+qWPTt7h8UlGQh7xXHWH2Rwf4QQKBgQD+p4OlpfpL8VBotDnI\n09O557z0oS40cQYaaUG7VAh4XmnoQ83hh3eAnP6zXclYM7LlEUBr71dLA78JDzeM\nYmU4bZKUwTFIvId/SWzIJjmADCNbCiB0oytLO4yOgMTtRvnAZ1cHTRx+3B81bbmY\nOcJWQ3F3ClqFyJMPWWAqGP21wQKBgQDtXjeya1wpdlBasUVLclIN7L2giDcw74rU\nylX1IeSd6pLC6/Kh4Hp5paaqhobfQvQnqA+7xHy14VsH56ohf6M7opd6464M7EtU\ngi/8SYakrWzYu2svvMqzyYJnxnUi2H/1S+OnlpxaD4523Rh/PbT8Zxq9w4vxaGOj\no3qJbQy6SQKBgQCVVWa+HTdKkZi1zfqU6qOewWbtjheqaR1LH66MTBsrezJgImL5\nfpd1tJsoVDdeofKmohdFNHXcZ7X/egz5Jjp1fMwYr7JXFTfgTQ6d0MynanbRTH77\n5zPcSm+CocDZ5GVRj0hZ3752Jl+m1VGhEz4DmElRpaCwE48p0R+zkDQ4AQKBgDKO\n2eAn2+Z869qVXYQXYoDSxwUVXmQO8YwnWK2wvWghWYcpCHIQRSX58YjqxHlzYlu8\nATXmQQXgbSo+3s7px9Pg6tDjA+R+xADJBf1/j60tvzxelxMA7E/lAOCntbVpVb/i\nnSfJ/Z11KMwKhbg8ZXtJXrnCl+EgcfCd1nDFCGv5AoGASaH0JxtenPVuUuq0Nf7o\nJXjK9eOR5Ty8UlIBmzke7B2LDEf5tdtGX82LYi5W+nTlc56zMbkVexbD/Kq0RX30\nGA5uEmqOXPkvbt4o8vFcHQANzxFaquPoSPgvfdZtULMBXYwIrZiEDy3nF5oDtP9L\nLyHMTy9ev3kIan6E4mbcOwQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "pitree@earthxhack-2020.iam.gserviceaccount.com",
+  "client_id": "115309414306507057722",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/pitree%40earthxhack-2020.iam.gserviceaccount.com"
+}
