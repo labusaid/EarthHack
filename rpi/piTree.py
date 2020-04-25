@@ -5,14 +5,14 @@ from time import sleep
 from google.cloud import storage, firestore
 
 # GCP Storage setup
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="earthxhack-2020-0dd11a74799e.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="earthxhack-2020-0c81af847185.json"
 client = storage.Client()
 # Static data for GCP call
 bucket_name = "earthxhack-2020.appspot.com"
-source_file_name = "temp.jpg"
+source_file_name = "img/temp.jpg"
 destination_blob_name = "temp"
 
-print('Credendtials from environ: {}'.format(
+print('Credentials from environ: {}'.format(
     os.environ.get('GOOGLE_APPLICATION_CREDENTIALS')))
 
 # Uploads blob to GCP from file
