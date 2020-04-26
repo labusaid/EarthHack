@@ -7,7 +7,7 @@ var chart = new Chart(ctx, {
     data: {
         labels: ['1', '2', '3', '4', '5'],
         datasets: [{
-            label: 'My First dataset',
+            label: 'Plant dataset',
             backgroundColor: 'rgb(26, 188, 156)',
             borderColor: 'rgb(26, 188, 156)',
             data: [0, 15, 10, 20, 30]
