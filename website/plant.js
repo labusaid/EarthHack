@@ -19,7 +19,6 @@ function addRowHandlers() {
       return function () {
         var cell = row.getElementsByTagName("td")[0];
         var id = cell.innerHTML;
-        alert("id:" + id.charAt(id.length-1));
         updateData(id.charAt(id.length-1));
       };
     };
