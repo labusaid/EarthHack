@@ -42,10 +42,15 @@ body {
     top: 3vh;
 }
 table {
-    position: relative;
-    top: 27%;
     box-shadow: 0.5px 0.5px 3px 2px lightgray;
 }
+@media screen and (min-width: 768px) {
+    table {
+      position: relative;
+      top: 27%;
+    }
+  }
+
 th{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
