@@ -47,6 +47,7 @@ function getData() {
             labels.push((doc.data().label).toString());
             values.push(doc.data().value * 100);
         });
+        chart.reset();
         chart.update();
     });
 }
@@ -60,6 +61,7 @@ function updateData(plantnum) {
             labels.push((doc.data().label).toString());
             values.push(doc.data().value * 100);
         });
+        chart.reset();
         chart.update();
     });
 }
@@ -86,6 +88,7 @@ var chart = new Chart(ctx, {
 
   // Configuration options go here
   options: {
+    responsive: true,
     title: {
       display: true,
       text: "Plant Dataset",
