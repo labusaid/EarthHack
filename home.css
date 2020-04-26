@@ -77,7 +77,7 @@ header {
 }
 #ourTeam {
     position: relative;
-    top: 5%;
+    top: 7vh;
 }
 
 .team4 {
@@ -131,4 +131,7 @@ header {
     -webkit-transform: translate3d(0px, -5px, 0px);
     transform: translate3d(0px, -5px, 0px);
     color: #316ce8;
+  }
+  footer {
+      background-color: #b2bec3;
   }
