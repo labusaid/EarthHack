@@ -58,7 +58,7 @@ function updateData(plantnum) {
     db.collection("metrics" + plantnum).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             labels.push((doc.data().label).toString());
-            values.push((doc.data().value) * 100);
+            values.push(doc.data().value * 100);
         });
         chart.update();
     });
@@ -77,7 +77,7 @@ var chart = new Chart(ctx, {
     datasets: [
       {
         data: values,
-        label: "Health/Day",
+        label: "Health (%) / Day",
         backgroundColor: "rgb(26, 188, 156)",
         borderColor: "rgb(26, 188, 156)",
       },
