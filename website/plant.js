@@ -10,9 +10,8 @@ var config = {
 
 firebase.initializeApp(config);
 
-var rowOne = document.getElementById("row1");
 function addRowHandlers() {
-  var table = document.getElementById("tableId");
+  var table = document.getElementById("dataTab");
   var rows = table.getElementsByTagName("tr");
   for (i = 0; i < rows.length; i++) {
     var currentRow = table.rows[i];
@@ -44,6 +43,7 @@ function getData() {
 
 var labels = [];
 var values = [];
+var planthealth = [];
 
 function getData() {
   var db = firebase.firestore();
@@ -57,6 +57,17 @@ function getData() {
       chart.update();
     });
 }
+
+function getData(plantnum) {
+    db.collection("metrics").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            labels.push((doc.data().label).toString());
+            values.push(doc.data().value);
+        });
+        chart.update();
+    });
+}
+
 
 window.addEventListener("load", getData());
 
