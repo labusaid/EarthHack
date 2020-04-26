@@ -1,0 +1,80 @@
+@import url(//fonts.googleapis.com/css?family=Montserrat:300,500,600);
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.navbar {
+    background-color: #b2bec3;
+}
+.navbar-nav {
+    position: relative;
+    left: 80%;
+}
+.nav-item{
+    font-size: 18px;
+}
+.logo{
+    width: 8%;
+}
+#plantData {
+    padding-bottom: 25vh;
+}
+#dataRow {
+    position: relative;
+    top: 20vh;
+}
+#thePlant {
+    text-align: center;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #3e4555;
+}
+.plantLogo{
+    width: 25%;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 37%;
+    top: 3vh;
+}
+table {
+    position: relative;
+    top: 8vh;
+    box-shadow: 0.5px 0.5px 3px 2px lightgray;
+}
+th{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+tbody {
+    background-color: rgba(26, 188, 156,0.6);
+}
+td{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+}
+
+.graph {
+    position: relative;
+    left: 10%;
+}
+
+#right{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 8vh;
+}
+#left{
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 8vh;
+}
+
