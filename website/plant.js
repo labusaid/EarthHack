@@ -58,9 +58,8 @@ function updateData(plantnum) {
     db.collection("metrics" + plantnum).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             labels.push((doc.data().label).toString());
-            values.push(doc.data().value);
+            values.push((doc.data().value) * 100);
         });
-        console.log(labels);
         chart.update();
     });
 }
