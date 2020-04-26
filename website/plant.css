@@ -21,7 +21,7 @@ body {
     width: 8%;
 }
 #plantData {
-    padding-bottom: 25vh;
+    padding-bottom: 28.5vh;
 }
 #dataRow {
     position: relative;
@@ -43,7 +43,7 @@ body {
 }
 table {
     position: relative;
-    top: 8vh;
+    top: 27%;
     box-shadow: 0.5px 0.5px 3px 2px lightgray;
 }
 th{
@@ -56,9 +56,5 @@ tbody {
 td{
     font-family: "Montserrat", sans-serif;
     font-weight: 300;
-}
-
-.graph {
-    
 }
 
