@@ -48,6 +48,7 @@ db = firestore.Client()
 API_ENDPOINT = "https://fu9gq38ul8.execute-api.us-east-2.amazonaws.com/Testing/getprobabilities"
 
 plant_img = ["Healthy_tomato.jpg", "Healthy_leaf.jpg", "Unhealthy_tomato.jpg"]
+statuses = ["Healthy leaf", "Healthy tomato", "Unhealthy leaf", "Unhealthy tomato"]
 
 for plant_num in range(1, 4):
     print(f'plant_num: {plant_num}')
@@ -87,8 +88,10 @@ for plant_num in range(1, 4):
     highest_val = max(decoded_response)
     doc_ref = db.collection(u'plants').document(f'plant{plant_num}')
     if float(highest_val) > .5:
+        highest_name = decoded_response.index(highest_val)
+        print(statuses[highest_name])
         doc_ref.set({
-            u'status': highest_val
+            u'status': statuses[highest_name]
         })
     else:
         doc_ref.set({
