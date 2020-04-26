@@ -47,6 +47,7 @@ function getData() {
             labels.push((doc.data().label).toString());
             values.push(doc.data().value * 100);
         });
+        chart.reset();
         chart.update();
     });
 }
@@ -60,7 +61,8 @@ function updateData(plantnum) {
             labels.push((doc.data().label).toString());
             values.push(doc.data().value * 100);
         });
-        chart.update(5);
+        chart.reset();
+        chart.update();
     });
 }
 
