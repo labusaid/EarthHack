@@ -4,7 +4,7 @@ import random
 import requests, json, base64
 from time import sleep
 # from picamera import PiCamera
-import cv2
+# import cv2
 # Imports the Google Cloud client library
 from google.cloud import storage, firestore
 
@@ -46,34 +46,34 @@ db = firestore.Client()
 # defining the api-endpoint
 API_ENDPOINT = "https://fu9gq38ul8.execute-api.us-east-2.amazonaws.com/Testing/getprobabilities"
 
-plant_img = ["img/Healthy_tomato.jpg", "img/Healthy_leaf.jpg", "img/Unhealthy_Tomato.jpg"]
+plant_img = ["Healthy_tomato.jpg", "Healthy_leaf.jpg", "Unhealthy_Tomato.jpg"]
 
 for plant_num in range(1, 4):
-    # print(f'plant_num: {plant_num}')
-    # print(f'plant_img: {plant_img[plant_num - 1]}')
+    print(f'plant_num: {plant_num}')
 
     # Context Manager for img files
-    with open(plant_img[plant_num - 1], "rb") as img_file:
-        # print(f'img_file: {img_file}')
-        temp = cv2.imread(plant_img[plant_num - 1])
-        test_img = cv2.cvtColor(temp, cv2.COLOR_BGR2RGB)
-        _, img_encoded = cv2.imencode('.jpg', test_img)
+    with open('img/'+ plant_img[plant_num - 1], "rb") as img_file:
+        # temp = cv2.imread(plant_img[plant_num - 1])
+        # test_img = cv2.cvtColor(temp, cv2.COLOR_BGR2RGB)
+        # _, img_encoded = cv2.imencode('.jpg', test_img)
+        # my_string = img_encoded.tostring()
 
-        # my_string = base64.b64encode(img_file.read())  # encode image in base64
+        my_string = base64.b64encode(img_file.read())  # encode image in base64
         # print(my_string)
 
     # data to be sent to api
     data = {
-        "data": img_encoded.tostring()
+        "data": my_string,
+        "file_name": plant_img[plant_num - 1]
     }
 
-    print(img_encoded.tostring())
+    print(f'posting: {data}')
 
     r = requests.post(url=API_ENDPOINT,
                       data=data)  # sending post request and saving response as response object
     response = r.text  # extracting response text
     # response = '{"Healthy_Leaf": "0.000001", "Healthy_Tomato": "0.000000", "Unhealthy_Leaf": "0.999998","Unhealthy_Tomato": "0.000000"}'
-    # print(f'response: {response}')
+    print(f'response: {response}')
     decoded_response = json.loads(response)  # Decodes JSON into a python dictionary
 
     # Gets max value

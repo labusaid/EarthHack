@@ -60,7 +60,7 @@ function updateData(plantnum) {
             labels.push((doc.data().label).toString());
             values.push(doc.data().value * 100);
         });
-        chart.update();
+        chart.update(5);
     });
 }
 
