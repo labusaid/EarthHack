@@ -7,7 +7,9 @@
     <link rel="stylesheet" type="text/css" href="path/to/chartjs/dist/Chart.min.css">
     <link rel="stylesheet" type="text/css" href="plant.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="plant.js" defer></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-database.js"></script>
+    <script src="plantTest.js" defer></script>
     <title>Plant - Grow It</title>
 </head>
 <body>
@@ -52,7 +54,7 @@
                 </table>
               </div>
               <div id="right"class="col-md-6">
-                <canvas class="graph" id="myChart" width="250" height="150"></canvas>
+                <div class="graph" id="chart-container"></div>
               </div>
           </div>
       </div>
