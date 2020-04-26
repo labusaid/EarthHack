@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 .navbar {
     background-color: #b2bec3;
@@ -20,11 +21,7 @@ header {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-body {
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .boxy {
@@ -33,15 +30,20 @@ body {
     font-size: 1.5em;
     color: #ffffff;
     padding: 0.35em 2.2em;
-    margin: 0.4em;
     border-style: double;
     border-radius: 200px;
     border-width: 1px;
     text-decoration: none;
     line-height: 95vh;
     position: relative;
-    left: 43.5%; 
+    left: 26%;
 }
+@media screen and (min-width: 768px) {
+    .boxy {
+      position: relative;
+      left: 45%;
+    }
+  }
 .boxy:hover {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
@@ -80,33 +82,56 @@ body {
     position: relative;
     top: 4vh;
 }
-#adjustRow {
-    position: relative;
-    left: 12.5%;
-    justify-content: center;
-}
 .reasonsLogo {
-    width: 20%;
-}
-.reason1 {
-    align-items: center;
+    width: 18%;
     position: relative;
-    right: 7%;
-    top: 10%;
+    left: 40%;
+}
+@media screen and (min-width: 768px) {
+    .reasonsLogo {
+        width: 12%;
+        position: relative;
+        left: 43%;
+    }
+  }
+.reason1{
+    align-items: center;
     font-family: "Montserrat", sans-serif;
     color: #3e4555;
+    position: relative;
+    left: 31%;
+    top: 12%;
 }
+@media screen and (min-width: 768px) {
+    .reason1 {
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        color: #3e4555;
+        position: relative;
+        left: 38%;
+        top: 12%;
+    }
+  }
 .reason2 {
     align-items: center;
-    position: relative;
-    right: 16%;
-    top: 10%;
     font-family: "Montserrat", sans-serif;
     color: #3e4555;
-}
-#ourTeam {
     position: relative;
-    top: 7vh;
+    left: 19%;
+    top: 12%;
+}
+@media screen and (min-width: 768px) {
+    .reason2 {
+        align-items: center;
+        font-family: "Montserrat", sans-serif;
+        color: #3e4555;
+        position: relative;
+        left: 30%;
+        top: 12%;
+    }
+  }
+#ourTeam {
+    padding-top: 7vh;
 }
 
 .team4 {
@@ -145,8 +170,17 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    left: 7%;
+    left: 19%;
 }  
+@media screen and (min-width: 768px) {
+    #teamRow {
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        left: 7%;
+    }
+  }
+
   .team4 ul li a {
     color: #8d97ad;
     padding-right: 15px;
