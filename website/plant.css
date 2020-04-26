@@ -33,22 +33,33 @@ body {
     color: #3e4555;
 }
 .plantLogo{
-    width: 25%;
+    width: 45%;
     align-items: center;
     justify-content: center;
     position: relative;
-    left: 37%;
-    top: 3vh;
+    left: 28%;
+    bottom: 1vh;
 }
 @media screen and (min-width: 768px) {
-  table {
-    position: relative;
-    top: 27%;
-  }
+    .plantLogo {
+        width: 25%;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        left: 37%;
+        top: 3vh;
+    }
 }
 table {
     box-shadow: 0.5px 0.5px 3px 2px lightgray;
 }
+@media screen and (min-width: 768px) {
+    table {
+      position: relative;
+      top: 27%;
+    }
+}
+
 th{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
