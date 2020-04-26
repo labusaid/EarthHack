@@ -19,7 +19,7 @@ function addRowHandlers() {
       return function () {
         var cell = row.getElementsByTagName("td")[0];
         var id = cell.innerHTML;
-        alert("id:" + id);
+        updateData(id.charAt(id.length-1));
       };
     };
 
@@ -28,38 +28,21 @@ function addRowHandlers() {
 }
 window.onload = addRowHandlers();
 
-function getData() {
-  var db = firebase.firestore();
-  db.collection("metrics")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        labels.push(doc.data().label.toString());
-        values.push(doc.data().value);
-      });
-      chart.update();
-    });
-}
-
+var db = firebase.firestore();
 var labels = [];
 var values = [];
-var planthealth = [];
 
 function getData() {
-  var db = firebase.firestore();
-  db.collection("metrics")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        labels.push(doc.data().label.toString());
-        values.push(doc.data().value);
-      });
-      chart.update();
+    db.collection("plants").get().then((querySnapshot) => {
+        let i = 1;
+        querySnapshot.forEach((doc) => {
+            console.log(doc.data().status);
+            console.log(i);
+            $("#plant" + i).html((doc.data().status).replace(/_/g, ' '));
+            i++;
+        });
     });
-}
-
-function getData(plantnum) {
-    db.collection("metrics").get().then((querySnapshot) => {
+    db.collection("metrics1").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             labels.push((doc.data().label).toString());
             values.push(doc.data().value);
@@ -68,6 +51,19 @@ function getData(plantnum) {
     });
 }
 
+function updateData(plantnum) {
+    labels.length = 0;
+    values.length = 0;
+    console.log("called updateData(" + plantnum + ")");
+    db.collection("metrics" + plantnum).get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            labels.push((doc.data().label).toString());
+            values.push(doc.data().value);
+        });
+        console.log(labels);
+        chart.update();
+    });
+}
 
 window.addEventListener("load", getData());
 

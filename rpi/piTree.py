@@ -73,7 +73,7 @@ doc_ref = db.collection(u'plants').document(u'plant1')
 #         u'status': highest_val
 #     })
 
-metrics_data = db.collection(u'metrics')
+metrics_data = db.collection(u'metrics3')
 growth = 0
 for i in range(10):
     growth += random.uniform(0, .1)
