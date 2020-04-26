@@ -10,18 +10,40 @@ var config = {
 
 firebase.initializeApp(config);
 
+function addRowHandlers() {
+  var table = document.getElementById("dataTab");
+  var rows = table.getElementsByTagName("tr");
+  for (i = 0; i < rows.length; i++) {
+    var currentRow = table.rows[i];
+    var createClickHandler = function (row) {
+      return function () {
+        var cell = row.getElementsByTagName("td")[0];
+        var id = cell.innerHTML;
+        alert("id:" + id.charAt(id.length-1));
+        updateData(id.charAt(id.length-1));
+      };
+    };
+
+    currentRow.onclick = createClickHandler(currentRow);
+  }
+}
+window.onload = addRowHandlers();
+
 var db = firebase.firestore();
 var labels = [];
 var values = [];
-var planthealth = [];
 
 function getData() {
     db.collection("plants").get().then((querySnapshot) => {
+        let i = 1;
         querySnapshot.forEach((doc) => {
             console.log(doc.data().status);
+            console.log(i);
+            $("#plant" + i).html((doc.data().status).replace(/_/g, ' '));
+            i++;
         });
     });
-    db.collection("metrics").get().then((querySnapshot) => {
+    db.collection("metrics1").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             labels.push((doc.data().label).toString());
             values.push(doc.data().value);
@@ -30,16 +52,19 @@ function getData() {
     });
 }
 
-function getData(plantnum) {
-    db.collection("metrics").get().then((querySnapshot) => {
+function updateData(plantnum) {
+    labels.length = 0;
+    values.length = 0;
+    console.log("called updateData(" + plantnum + ")");
+    db.collection("metrics" + plantnum).get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             labels.push((doc.data().label).toString());
             values.push(doc.data().value);
         });
+        console.log(labels);
         chart.update();
     });
 }
-
 
 window.addEventListener("load", getData());
 
