@@ -14,13 +14,11 @@ var labels = [];
 var values = [];
 
 function getData() {
-    console.log("getData Invoked");
     var db = firebase.firestore();
     db.collection("metrics").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            labels.push(doc.data().label);
+            labels.push((doc.data().label).toString());
             values.push(doc.data().value);
-            console.log(doc.data())
         });
         chart.update();
     });
@@ -28,7 +26,7 @@ function getData() {
 
 window.addEventListener("load", getData());
 
-var ctx = document.getElementById('myChart').getContext('2d');
+var ctx = document.getElementById('myChart').getContext("2d");
 var chart = new Chart(ctx, {
     // The type of chart we want to create
     type: 'line',
@@ -37,13 +35,18 @@ var chart = new Chart(ctx, {
     data: {
         labels: labels,
         datasets: [{
-            label: 'Plant dataset',
+            data: values,
+            label: 'Health/Day',
             backgroundColor: 'rgb(26, 188, 156)',
             borderColor: 'rgb(26, 188, 156)',
-            data: values
         }]
     },
 
     // Configuration options go here
-    options: {}
+    options: {
+        title: {
+          display: true,
+          text: 'Plant Dataset'
+        }
+      }
 });
