@@ -10,11 +10,17 @@ var config = {
 
 firebase.initializeApp(config);
 
+var db = firebase.firestore();
 var labels = [];
 var values = [];
+var planthealth = [];
 
 function getData() {
-    var db = firebase.firestore();
+    db.collection("plants").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            console.log(doc.data().status);
+        });
+    });
     db.collection("metrics").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             labels.push((doc.data().label).toString());
@@ -23,6 +29,17 @@ function getData() {
         chart.update();
     });
 }
+
+function getData(plantnum) {
+    db.collection("metrics").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            labels.push((doc.data().label).toString());
+            values.push(doc.data().value);
+        });
+        chart.update();
+    });
+}
+
 
 window.addEventListener("load", getData());
 

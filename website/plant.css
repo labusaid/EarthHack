@@ -21,11 +21,9 @@ body {
     width: 8%;
 }
 #plantData {
-    padding-bottom: 28.5vh;
 }
 #dataRow {
-    position: relative;
-    top: 20vh;
+    margin-top: 5%;
 }
 #thePlant {
     text-align: center;
@@ -41,16 +39,15 @@ body {
     left: 37%;
     top: 3vh;
 }
+@media screen and (min-width: 768px) {
+  table {
+    position: relative;
+    top: 27%;
+  }
+}
 table {
     box-shadow: 0.5px 0.5px 3px 2px lightgray;
 }
-@media screen and (min-width: 768px) {
-    table {
-      position: relative;
-      top: 27%;
-    }
-  }
-
 th{
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
