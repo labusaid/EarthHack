@@ -11,9 +11,11 @@ var config = {
 firebase.initializeApp(config);
 
 function getData(callbackIN) {
-  var ref = firebase.firestore().ref("plant_health0");
-  ref.once("value").then(function (snapshot) {
-    callbackIN(snapshot.val());
+  var db = firebase.firestore();
+  db.collection("metrics").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+      console.log(`${doc.id} => ${doc.data()}`);
+    });
   });
 }
 
