@@ -63,16 +63,3 @@ td{
     left: 10%;
 }
 
-#right{
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    left: 8vh;
-}
-#left{
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    right: 8vh;
-}
-

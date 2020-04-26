@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="path/to/chartjs/dist/Chart.min.css">
     <link rel="stylesheet" type="text/css" href="plant.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
@@ -14,59 +15,68 @@
     <title>Plant - Grow It</title>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <a class="navbar-brand" href="home.html"><img class="logo" src="https://image.flaticon.com/icons/svg/1808/1808886.svg" alt=""></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
+<nav class="navbar navbar-expand-lg navbar-light">
+    <a class="navbar-brand" href="home.html"><img class="logo"
+                                                  src="https://image.flaticon.com/icons/svg/1808/1808886.svg"
+                                                  alt=""></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
             <a class="nav-item nav-link active" href="home.html">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="plant.html">Plant</a>
-          </div>
         </div>
-      </nav>
-      <div id="plantData" class="container">
-          <p id="thePlant" class="display-3 mt-5">Your Plant</p>
-          <img class="plantLogo" src="https://image.flaticon.com/icons/svg/628/628283.svg" alt="">
-          <div id="dataRow" class="row">
-              <div id="left" class="col-md-6">
-                <table class="table table-borderless">
-                    <thead>
-                        <tr>
-                            <th>Day</th>
-                            <th>Health</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>50%</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>70%</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>95%</td>
-                        </tr>            
-                    </tbody>
-                </table>
-              </div>
-              <div id="right"class="col-md-6">
-                <canvas class="graph" id="myChart" width="250" height="150"></canvas>
-              </div>
-          </div>
-      </div>
-    
-    
-      <footer class="page-footer font-small">
-        <div class="footer-copyright text-center py-3">© 2020 Copyright GrowIt</div>
-      </footer> 
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+    </div>
+</nav>
+<div id="plantData" class="container">
+    <p id="thePlant" class="display-3 mt-5">Your Plant</p>
+    <img class="plantLogo" src="https://image.flaticon.com/icons/svg/628/628283.svg" alt="">
+    <div id="dataRow" class="row">
+        <div id="left" class="col-md-6">
+            <table class="table table-borderless">
+                <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Health</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>50%</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>70%</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>95%</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="right" class="col-md-6">
+            <canvas class="graph" id="myChart" width="250" height="150"></canvas>
+        </div>
+    </div>
+</div>
+
+
+<footer class="page-footer font-small">
+    <div class="footer-copyright text-center py-3">© 2020 Copyright GrowIt</div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"
+        integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+        crossorigin="anonymous"></script>
 </body>
 </html>

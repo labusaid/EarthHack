@@ -74,10 +74,12 @@ doc_ref = db.collection(u'plants').document(u'plant1')
 #     })
 
 metrics_data = db.collection(u'metrics')
-for i in range(50):
+growth = 0
+for i in range(10):
+    growth += random.uniform(0, .1)
     metrics_data.document(f'plant_health{i}').set({
         'label': i,
-        'value': random.uniform(0, 1)
+        'value': growth
     })
 
 # Upload image to GCP

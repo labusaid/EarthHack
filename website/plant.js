@@ -10,19 +10,19 @@ var config = {
 
 firebase.initializeApp(config);
 
-var labels = []
-var values = []
+var labels = [];
+var values = [];
 
 function getData() {
+    console.log("getData Invoked");
     var db = firebase.firestore();
     db.collection("metrics").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-            labels.push(doc.data().label)
-            values.push(doc.data().value)
+            labels.push(doc.data().label);
+            values.push(doc.data().value);
             console.log(doc.data())
         });
-        console.log(labels)
-        console.log(values)
+        chart.update();
     });
 }
 
