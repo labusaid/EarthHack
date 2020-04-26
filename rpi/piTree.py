@@ -1,4 +1,6 @@
 import os
+import random
+
 import requests, json, base64
 from time import sleep
 # from picamera import PiCamera
@@ -15,6 +17,7 @@ db = firestore.Client()
 bucket_name = "earthxhack-2020.appspot.com"
 source_file_name = "img/temp.jpg"
 destination_blob_name = "temp.jpg"
+
 
 # Uploads blob to GCP from file
 def upload_blob(bucket_name, source_file_name, destination_blob_name):
@@ -39,35 +42,43 @@ def upload_blob(bucket_name, source_file_name, destination_blob_name):
 # camera.capture('img/temp.jpg')
 
 # defining the api-endpoint
-API_ENDPOINT = "http://pastebin.com/api/api_post.php"
+API_ENDPOINT = "https://runtime.sagemaker.us-east-2.amazonaws.com/endpoints/sample-endpoint-201CE626-5EC5-4030-9236-7D6A10F55C65-1/invocations"
 # your API key here
 API_KEY = "XXXXXXXXXXXXXXXXX"
 # data to be sent to api
-data = {'api_dev_key': API_KEY,
-        'api_option': 'paste',
-        'api_paste_code': "",
-        'api_paste_format': 'python'}
+data = {'content_type': 'image/jpg',
+        'Accept': 'Accept',
+
+        }
 
 with open("img/Healthy_leaf.jpg", "rb") as img_file:
     my_string = base64.b64encode(img_file.read())
 print(my_string)
 
 # sending post request and saving response as response object
-r = requests.post(url=API_ENDPOINT, data=data)
+r = requests.post(url=API_ENDPOINT, data=my_string)
 
 # extracting response text
-# response = r.text
-response = '{"Healthy_Leaf": "0.000001", "Healthy_Tomato": "0.000000", "Unhealthy_Leaf": "0.999998","Unhealthy_Tomato": "0.000000"}'
+response = r.text
+print(f'response:  {response}')
+# response = '{"Healthy_Leaf": "0.000001", "Healthy_Tomato": "0.000000", "Unhealthy_Leaf": "0.999998","Unhealthy_Tomato": "0.000000"}'
+
 # Decodes JSON into a python dictionary
 decoded_response = json.loads(response)
 # Gets max value
 highest_val = max(decoded_response, key=decoded_response.get)
 doc_ref = db.collection(u'plants').document(u'plant1')
-if float(decoded_response[highest_val]) > .5:
-    doc_ref.set({
-        u'status': highest_val
-    })
+# if float(decoded_response[highest_val]) > .5:
+#     doc_ref.set({
+#         u'status': highest_val
+#     })
 
+metrics_data = db.collection(u'metrics')
+for i in range(50):
+    metrics_data.document(f'plant_health{i}').set({
+        'label': i,
+        'value': random.uniform(0, 1)
+    })
 
 # Upload image to GCP
 # upload_blob(bucket_name, source_file_name, destination_blob_name)
