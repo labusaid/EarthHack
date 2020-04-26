@@ -45,7 +45,7 @@ function getData() {
     db.collection("metrics1").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             labels.push((doc.data().label).toString());
-            values.push(doc.data().value);
+            values.push(doc.data().value * 100);
         });
         chart.update();
     });
