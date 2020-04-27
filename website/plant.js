@@ -88,6 +88,7 @@ var chart = new Chart(ctx, {
 
   // Configuration options go here
   options: {
+    responsive: true,
     title: {
       display: true,
       text: "Plant Dataset",
